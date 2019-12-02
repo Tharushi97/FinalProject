@@ -15,6 +15,7 @@ const employee = require("./routes/employee.route");
 const app = express();
 const multer = require('multer')
 const Position = require('./models/position');
+var Applicant = require('./models/applicant');
 
 mongoose
     .connect(
@@ -26,7 +27,8 @@ mongoose
     .catch(() => {
         console.log("Connection failed!");
     });
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
@@ -124,7 +126,7 @@ app.get('/api/user/privilages/:id', (req, res) => {
 })
 
 app.post('/register', (req, res) => {
-    console.log("register",req.body);
+    console.log("registerssss",req);
 
     var positionId = req.body.positionId;
     var firstname = req.body.firstname;
@@ -138,9 +140,6 @@ app.post('/register', (req, res) => {
     var cvDoc = req.body.cvDoc;
 
     // var evaluated = false
-
-
-
 
     var applicant = new Applicant();
     applicant.firstname = firstname;
@@ -183,14 +182,14 @@ app.post('/register', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'uploads')))
 app.use(express.static(path.join(__dirname, 'attachments')))
-app.use(bodyParser.json());
+
 app.use(cors());
 app.use(passport.initialize());
-app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use("/employee", employee);
 app.use('/employeev2', employeeRoutes);
 app.use('/applicant', applicantRoutes);
-let port=3000;
+let PORT = 3000;
 
 
 const UserController = require('./controllers/User')
@@ -203,6 +202,6 @@ app.use("/api/position", postsRoutes);
 const rtsIndex = require('./routes/index.router');
 app.use('/api', rtsIndex);
 
-app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
+app.listen(PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
 //app.use("/api/image", userImageRoutes); //me image ekata adala code eka  me url eka enne front end eken.e url ekata adalawa userImageRoute (images.js) ekata ynwa meken
 module.exports = app;
