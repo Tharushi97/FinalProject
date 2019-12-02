@@ -1,0 +1,36 @@
+.jumbotron{
+    margin: 40px;
+    min-height: 400px;
+    /* background-color: rgb(229, 226, 229); */
+    
+     /* background-image: url(https://www.personneltoday.com/wp-content/uploads/sites/8/2019/01/minority-ethnic-job-candidates.jpg); */
+  }
+  
+  
+  .sel:hover{
+  background-color: rgb(62, 4, 85);
+  color: white;
+  cursor: pointer;
+  
+  }
+  
+  .toolbarButtons{
+    float: right;
+    text-align: right;
+    position: absolute;
+    right: 0;
+  }
+  
+  
+  .b1{
+    border: 1px rgb(184, 177, 177) solid;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  
+
+  
+  
+  
+  
+  

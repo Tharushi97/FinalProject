@@ -1,0 +1,12 @@
+<mat-toolbar fxLayout="row" color="primary" class="mat-elevation-z6 toolbar" style="position: fixed;overflow: hidden;width: 50%;z-index: 1;" >
+    <span>Curriculam Vitae
+
+    </span>
+    
+  
+</mat-toolbar>
+<div style=" margin-top: 35px;z-index: -1;overflow: scroll;">
+    <!-- <pdf-viewer style=" margin-top: 25px;" src="https://firebasestorage.googleapis.com/v0/b/geveo-australasia.appspot.com/o/CVPdf%2F2010.pdf1573286446964?alt=media&token=333537be-59ea-4d63-a5ad-d4c7416fa76d"  ></pdf-viewer> -->
+    <iframe *ngIf="pdfSrc" class="mat-elevation-z6" style="width: 50%; height: 690px;top: 0; position: absolute;margin-top: 100px;"  [src]="pdfSrc" frameborder="0"></iframe>
+
+</div>

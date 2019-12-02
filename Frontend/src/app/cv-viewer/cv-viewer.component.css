@@ -1,0 +1,9 @@
+.toolbar{
+    display: flex;
+    flex-direction: row;
+}
+
+.dwn:hover{
+    background-color: white;
+    color: black;
+}

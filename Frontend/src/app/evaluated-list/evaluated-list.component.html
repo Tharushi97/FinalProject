@@ -1,0 +1,41 @@
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<div class="wrapper">
+    <div class="main-panel">
+        
+        <div class="jumbotron">
+           
+          <mat-toolbar style="background-color: rgba(163, 126, 197, 0.699);" class="mat-elevation-z6">
+            <span>Evaluated Applicants</span>
+          </mat-toolbar>
+          <table class="table table-striped" style="margin-top: 16px;max-height: 400px;overflow: scroll;">
+           
+            <thead>
+              <tr>
+                <th>No#</th>
+                <th>Applicant Name</th>
+                <th>Email</th>
+                <th>LinkedIn profile</th>
+                <th>Mobile Number</th>
+                <th>Rating</th>
+                <th>Referred by</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="sel" *ngFor="let evaluatedApplicant of evaluatedApplicants; let i= index" (click)="viewProfile(evaluatedApplicant)">
+                <td>{{i+1}}</td>
+        
+                <td>{{evaluatedApplicant.firstname}} {{evaluatedApplicant.lastname}} </td>
+                <td>{{evaluatedApplicant.email}}</td>
+                <td>{{evaluatedApplicant.linkedin}}</td>
+                <td>{{evaluatedApplicant.mobile}}</td>
+                <td>{{evaluatedApplicant.rate}}</td>
+                <td>{{evaluatedApplicant.referral}}</td>
+              </tr>
+        
+            </tbody>
+           
+          </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,141 @@
+.toolbarButtons{
+    float: right;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+
+
+.b1{
+    border: 1px rgb(184, 177, 177) solid;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+
+.form{
+    
+    background-color: rgba(255, 255, 255, 0.288);
+    margin: 10px;
+    /* border-style: outset; */
+    margin: auto;
+    background-image: url(http://ls1.and.nic.in/JobFair/images/Job_Fair_Image.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.topic{
+    color: yellow;
+    font-size: 36px;
+    background-color: rgba(0, 0, 0, 0.568);
+    padding: 12px;
+}
+
+.content{
+    margin-top: 20px;;
+    background-color: rgba(255, 255, 255, 0.952);
+    /* color: white; */
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.field{
+    width: 48%;
+    margin-left: 6px;
+}
+
+.fieldFull{
+    width: 96%;
+    margin-left: 8px;
+}
+
+.jumbotron{
+    /* margin: 10px; */
+}
+
+.submit{
+    background-color: blueviolet;
+    color: white;
+    margin-top: 20px;
+    width: 25%;
+    font-size: 18px;
+}
+
+.cv{
+    margin: 10px;
+    width: 96%;
+    height: 60px;
+    background-color: rgba(140, 0, 255, 0.342);
+    font-size: 16px;
+}
+
+
+
+
+/* rating css */
+.rating {
+    float: left;
+  }
+  
+  
+  /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+     follow these rules. Every browser that supports :checked also supports :not(), so
+     it doesn’t make the test unnecessarily selective */
+  
+  .rating:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  .rating:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 .1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 400%;
+    line-height: 1.2;
+    color: #ddd;
+    text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
+  }
+  
+  .rating:not(:checked) > label:before {
+    content: '★ ';
+  }
+  
+  .rating > input:checked ~ label {
+    color: #f70;
+    text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+  }
+  
+  .rating > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+  }
+
+
+  .rate-widget{
+      padding: 20px;
+  }
+

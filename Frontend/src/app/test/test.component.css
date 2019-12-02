@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+.body {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    /* background-size: cover; */
+    /* background-color: #DFDBD9; */
+}
+
+.disp-body {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    background-color: rgba(82, 82, 82, 0.774);
+    background-image: url(https://www.canva.com/learn/wp-content/uploads/2018/12/Affordable-marketing-ideas-for-your-small-business_featured-image.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    -webkit-filter: blur(6px);
+    z-index: -1;
+}
+
+.top-header {
+    width: 82%;
+    margin-top: 5px;
+    margin-left: 18%;
+    font-family: 'Exo', sans-serif;
+    font-weight: 600;
+    color: rgba(29, 83, 184, 0.966);
+    z-index: 1;
+}
+
+#form-text {
+    color: rgb(252, 252, 252);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#form-text:hover {
+    color: rgb(71, 138, 226);
+}
+
+.btn-submit:active :hover {
+    opacity: 1.0;
+    /* background-color: #fff; */
+}
+
+.btn-submit {
+    width: 200px;
+    height: 40px;
+    background: rgba(29, 83, 184, 0.966);
+    border: 1px solid rgb(91, 226, 147);
+    cursor: pointer;
+    border-radius: 2px;
+    color: rgb(27, 26, 83);
+    font-family: 'Exo', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 6px;
+    margin-top: 10px;
+    margin-left: 78%;
+    transition: all .2s;
+    opacity: 0.8;
+}
+
+.btn-submit:hover {
+    opacity: 1.0;
+}
+
+#type-answer {
+    height: 100px;
+}
+
+#date-type {
+    color: rgba(71, 21, 153, 0.966);
+    font-size: 18px;
+}

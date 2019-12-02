@@ -1,0 +1,106 @@
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<div class="wrapper ">
+    <div class="main-panel">
+        <div class="content">
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <a class="navbar-brand">User Profile</a>
+                    </div>
+                    <app-logout></app-logout>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h4 class="card-title">Edit Profile</h4>
+                                    <p class="card-category">Complete your profile</p>
+                                </div>
+                                <div class="card-body">
+                                    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+                                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">First Name</label>
+                                                    <input type="text" class="form-control" name="firstname" #name="ngModel" [(ngModel)]="userService.selectedUser.firstname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">Last Name</label>
+                                                    <input type="text" class="form-control" name="lastname" #name="ngModel" [(ngModel)]="userService.selectedUser.lastname">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">Email address</label>
+                                                    <input type="email" class="form-control" name="email" #name="ngModel" [(ngModel)]="userService.selectedUser.email" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">Password</label>
+                                                    <input type="password" class="form-control" name="password" #name="ngModel" [(ngModel)]="userService.selectedUser.password" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">Address</label>
+                                                    <input type="text" class="form-control" name="address" #name="ngModel" [(ngModel)]="userService.selectedUser.address">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">City</label>
+                                                    <input type="text" class="form-control" name="city" #name="ngModel" [(ngModel)]="userService.selectedUser.city">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">Country</label>
+                                                    <input type="text" class="form-control" name="country" #name="ngModel" [(ngModel)]="userService.selectedUser.country">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">Postal Code</label>
+                                                    <input type="text" class="form-control" name="postalCode" #name="ngModel" [(ngModel)]="userService.selectedUser.postalCode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>About Me</label>
+                                                    <div class="form-group">
+                                                        <label class="bmd-label-floating">Write something about
+                                                            you...</label>
+                                                        <textarea class="form-control" rows="5" name="about" #name="ngModel" [(ngModel)]="userService.selectedUser.about"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary pull-right" [disabled]="!userForm.valid">Update
+                                            Profile</button>
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

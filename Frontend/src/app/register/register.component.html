@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-content>
+        <form id="formData" [formGroup]='registrationForm' enctype="multipart/form-data" (ngSubmit)="registerUser()">
+            <div id="first">
+
+                <label>First Name :</label>
+                <input matInput placeholder="Firstname" id="fname" name="firstname" type="text" formControlName="firstname" required>
+                <mat-error *ngIf="registrationForm.get('firstname').hasError('required')">**First name is required</mat-error>
+                <!-- <div *ngIf="" style="color: red">**First name is required</div> -->
+                <br>
+                <label>Last Name :</label>
+                <input matInput placeholder="Lastname" id="lname" name="lastname" type="text" formControlName="lastname" required>
+                <mat-error *ngIf="registrationForm.get('lastname').hasError('required')">**Last name is required</mat-error>
+                <br>
+                <label>Email :</label>
+                <input matInput placeholder="Email" id="email" name="email" type="email" formControlName="email" required>
+                <mat-error *ngIf="registrationForm.get('email').hasError('required')">**Email is required</mat-error>
+                <mat-error *ngIf="registrationForm.get('email').hasError('email')">**Enter a valid email address</mat-error>
+                <br>
+                <label>Mobile :</label>
+                <input matInput placeholder="Mobile" id="mobile" name="mobile" type="text" formControlName="mobile" maxlength="10" required>
+                <mat-error *ngIf="registrationForm.get('email').hasError('required')">**mobile No is required</mat-error>
+                <mat-error *ngIf="registrationForm.get('mobile').hasError('minlength')">**should contain 10 numbers</mat-error>
+                <br>
+
+                <label>NIC No :</label>
+                <input matInput placeholder="Nic No" id="nic" name="nic" type="text" formControlName="nic" required>
+                <mat-error *ngIf="registrationForm.get('nic').hasError('required')">**NIC No is required</mat-error>
+                <mat-error *ngIf="registrationForm.get('nic').hasError('pattern')">**Enter a valid NIC No</mat-error>
+                <br>
+
+                <label>LinkedIn :</label>
+                <input matInput placeholder="Linked In" id="linkedin" name="linkedin" type="text" formControlName="linkedin" required>
+                <mat-error *ngIf="registrationForm.get('lastname').hasError('required')">**Linked is required</mat-error> 
+                <br>
+
+                <label for="input-file-id" class="md-button md-raised md-primary">Upload CV:</label>
+                <input class="ng-hide" id="input-file-id" type="file" name="fs" accept=".pdf" (change)="onFileSelected($event)" />
+
+
+                <input id="submit" type="submit" value="Submit">
+                <!-- <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+              Login failed:{{errorMessage}}
+              Login failed:{{errorMessagea}}
+              Login failed:{{data}} </div> -->
+
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>

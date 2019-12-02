@@ -1,0 +1,53 @@
+<div class="disp-body">
+</div>
+
+<div class="body">
+
+    <app-mainview ng-model="mainview"> </app-mainview>
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+            <app-logout></app-logout>
+        </div>
+    </nav>
+
+    <br><br><br>
+    <h2 class="top-header">Add New Position</h2>
+
+    <div class="mt-4 col-8 offset-2">
+        <div style="margin-left: 13%; margin-top: 100px; width: 100%;">
+            <div class="card-body">
+                <form class="form-group" (ngSubmit)="onSubmit()" autocomplete="off" novalidate #newPosition="ngForm">
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label" id="form-text">Job Title</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" required
+                                placeholder="Software Engineer" name="position" [(ngModel)]="position.title">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label" id="form-text">Job Summary</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control " id="exampleFormControlInput2" required
+                                placeholder="C# with 2yrs experience" name="summary" [(ngModel)]="position.summary">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label" id="form-text">Job
+                            Description</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" name="description"
+                                [(ngModel)]="position.description"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10 offset-2">
+                            <button type="submit" class="btn-submit" value="submit">Save</button>
+                            <button type="button" class="btn-submit" value="cancel"
+                                routerLink="/Geveo/Dashboard">Cancel</button><br>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

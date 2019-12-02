@@ -1,0 +1,101 @@
+<div class="disp-body">
+</div>
+<div class="sidebar" data-color="purple" data-background-color="white" data-image="../../assets/img/sidebar-4.jpg">
+    <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+    Tip 2: you can also add an image using data-image tag
+  -->
+    <div class="logo">
+        <a class="simple-text logo-normal">
+      Codex Technologies
+    </a>
+    </div>
+
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">
+                    <i class="material-icons">dashboard</i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <!--component : user management-->
+            <li class="nav-item " *ngIf="role === 'admin'">
+                <a class="nav-link" routerLink="/userManagement" routerLinkActive="active">
+                    <i class="material-icons">account_circle</i>
+                    <p>User Management</p>
+                </a>
+            </li>
+            <!--component : user-->
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/userProfile" routerLinkActive="active">
+                    <i class="material-icons">person</i>
+                    <p>User Profile</p>
+                </a>
+            </li>
+            <!--component : Adding new job positions-->
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/NewPosition" routerLinkActive="active">
+                    <i class="material-icons">people</i>
+                    <p>Add New Job Position</p>
+                </a>
+            </li>
+            <!--component : Showing added job positions-->
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/PositionList" routerLinkActive="active">
+                    <i class="material-icons">assignment_ind</i>
+                    <p>Job Positions</p>
+                </a>
+            </li>
+            <!--component : Adding new job posts-->
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/NewPost" routerLinkActive="active">
+                    <i class="material-icons">note_add</i>
+                    <p>Add New Job Post</p>
+                </a>
+            </li>
+            <!--component : Showing added job posts-->
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/JobPosts" routerLinkActive="active">
+                    <i class="material-icons">description</i>
+                    <p>Job Posts</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/RecruitPositions" routerLinkActive="active">
+                    <i class="material-icons">Selection Portal</i>
+                    <p>Selection Portal</p>
+                </a>
+            </li>
+            <!--component : Adding CVs-->
+            <li class="nav-item " *ngIf="rateCVs">
+                <a class="nav-link" routerLink="/ApplicantList" routerLinkActive="active">
+                    <i class="material-icons">person_add</i>
+                    <p>Non-evaluated applicants</p>
+                </a>
+            </li>
+
+            <li class="nav-item " *ngIf="interview">
+                <a class="nav-link" routerLink="/EvaluatedList" routerLinkActive="active">
+                    <i class="material-icons">person</i>
+                    <p>Evaluated applicants</p>
+                </a>
+            </li>
+            <!--component : Rating CVs-->
+            <!-- <li class="nav-item ">
+                <a class="nav-link" routerLink="/EvaluatedList" routerLinkActive="active">
+                    <i class="material-icons">star_half</i>
+                    <p>Rate CV</p>
+                </a>
+            </li> -->
+            <!--component : Rating CVs-->
+            <li class="nav-item " *ngIf="sendMails">
+                <a class="nav-link" routerLink="/EmployeesList" routerLinkActive="active">
+                    <i class="material-icons">how_to_reg</i>
+                    <p>Interviews</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

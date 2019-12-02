@@ -1,0 +1,131 @@
+/* 
+=====
+EFFECT FADING OUT FOR SIBLINGS MENU OPTIONS 
+=====
+*/
+
+.menu:hover .menu__link:not(:hover) {
+    color: #241c69;
+}
+
+
+/* 
+  =====
+  MENU STYLES
+  =====
+  */
+
+
+/* core styles */
+
+.menu {
+    background-color: #6c5ce7;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+    width: 100%;
+}
+
+.menu__list {
+    display: flex;
+    text-align: center;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.menu__group {
+    flex-grow: 1;
+}
+
+.menu__link {
+    display: block;
+    padding: 2rem 1.5rem;
+    will-change: color;
+    transition: color .25s ease-out;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/* states */
+
+.menu__link:focus {
+    outline: 2px solid #fff;
+}
+
+
+/* hover animation */
+
+.menu__link {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu__link::before,
+.menu__link::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    will-change: width;
+    transition: width .05s ease-out;
+    position: absolute;
+    bottom: 0;
+}
+
+.menu__link::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu__link::after {
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.menu__link:hover::before,
+.menu__link:hover::after {
+    width: 100%;
+    transition-duration: .15s;
+}
+
+
+/*
+  =====
+  DEMO
+  =====
+  */
+
+@media (min-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    box-sizing: border-box;
+    /* max-width: 640px; */
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    order: 1;
+    margin: auto;
+    z-index: 10000;
+}

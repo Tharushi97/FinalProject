@@ -1,0 +1,42 @@
+<div class="disp-body"></div>
+<div class="body">
+
+    <!-- <app-navbar style="position: fixed; width: 100%;"> </app-navbar> -->
+    <app-mainview> </app-mainview>
+    <br><br><br>
+    <h2 class="top-header">Job Positions</h2>
+    <br><br>
+
+    <br>
+
+    <div class="wrap-table100">
+        <div class="table100">
+            <table>
+                <thead>
+                    <tr class="table100-head">
+                        <th class="column1">Name</th>
+                        <th class="column2">Points</th>
+                        <th class="column3">Comments</th>
+                        <th class="column4">Select</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let applicant of SelectApplicant">
+
+                        <td class="column1">{{applicant.firstname}} {{applicant.lastname}}</td>
+                        <td class="column2">{{applicant.interviewPoints}}</td>
+                        <td class="column3">{{applicant.interviewerComments}}</td>
+                        <td class="column4"><button value="{{applicant}}" *ngIf="!applicant.selected" (click)="appSelected(applicant)" class="btn-reply">Select</button></td>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>

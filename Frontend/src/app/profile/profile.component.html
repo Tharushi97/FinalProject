@@ -1,0 +1,360 @@
+<app-mainview ng-model="mainview"> </app-mainview>
+
+
+<div class="wrapper">
+        
+    <div class="main-panel">
+        <mat-toolbar class="toolbar" color="primary">
+            <!-- <button (click)="goBack()" style="border-radius: 100%;height: 50px;margin-right: 20px;" mat-raised-button color="primary" >
+                <mat-icon aria-label="back"><i class="fas fa-arrow-left"></i></mat-icon>
+            </button> -->
+            <span>Applicant profile ({{applicant.firstname | titlecase}}
+                {{applicant.lastname | titlecase}})</span>
+         
+
+        </mat-toolbar>
+        <mat-progress-bar *ngIf="saving" mode="indeterminate"></mat-progress-bar>
+
+        <div class="row">
+            <div class="column1 mat-elevation-z6">
+                <div class="details" align="center">
+                    <h2 style="color: rgb(235, 229, 229);">{{applicant.firstname | titlecase}}
+                        {{applicant.lastname | titlecase}}</h2>
+                    <div class="subtitle">
+                        <h5>Job looking for : {{applicant.title}}</h5>
+                    </div>
+                    <div class="subtitle">E-mail : {{applicant.email}}</div>
+                    <div class="subtitle">LinkedIn : {{applicant.linkedin}}</div>
+
+                </div>
+               
+                <div class="detail1">
+
+                </div>
+                <div class="detail1">
+
+                </div>
+
+                <div class="detail2">
+                    <div>Rate of {{applicant.firstname | titlecase}}</div>
+                    <div class="rate-widget">
+                        <fieldset class="rating">
+
+                            <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="applicant.rate" /><label
+                                for="star5" title="Rocks!">5 stars</label>
+                            <input type="radio" id="star4" name="rating" value="4" [(ngModel)]="applicant.rate" /><label
+                                for="star4" title="Pretty good">4 stars</label>
+                            <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="applicant.rate" /><label
+                                for="star3" title="Meh">3 stars</label>
+                            <input type="radio" id="star2" name="rating" value="2" [(ngModel)]="applicant.rate" /><label
+                                for="star2" title="Kinda bad">2 stars</label>
+                            <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="applicant.rate" /><label
+                                for="star1" title="Sucks big time">1 star</label>
+                        </fieldset>
+                    </div>
+
+                </div>
+
+                <div class="contact" style="width: 100%;">
+
+                    <div class="status">
+                        <mat-icon style="margin-right: 6px;">language</mat-icon>
+                        <h5>Status :</h5>
+                        <h5 *ngIf="applicant.rate>=3" style="margin-left: 12px;color: greenyellow;"> Shortlisted </h5>
+                        <h5 *ngIf="applicant.rate<3" style="margin-left: 12px;color: coral;"> Not Shortlisted </h5>
+                    </div>
+                    <div class="status column">
+                        <div class="row1">
+                            <mat-icon style="margin-right: 6px;font-size: 20px;">phone</mat-icon>
+                            <p>Mobile :</p>
+                            <p style="color: rgb(165, 161, 161);margin-left: 6px;">{{applicant.mobile}}</p>
+                        </div>
+                        <div class="row1">
+                            <mat-icon style="margin-right: 6px;font-size: 20px;">mail</mat-icon>
+                            <p>Email : </p>
+                            <p style="color: rgb(165, 161, 161);margin-left: 6px;">{{applicant.email}}</p>
+                        </div>
+                        <div class="row1">
+                            <mat-icon style="margin-right: 6px;font-size: 20px;">assignment</mat-icon>
+                            <p>NIC number: </p>
+                            <p style="color: rgb(165, 161, 161);margin-left: 6px;">{{applicant.nic}}</p>
+                        </div>
+                        <div class="row1">
+                            <mat-icon style="margin-right: 6px;font-size: 20px;">assignment_ind</mat-icon>
+                            <p>LinkedIn : </p>
+                            <p style="color: rgb(165, 161, 161);margin-left: 6px;">{{applicant.linkedin}}</p>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <img style="margin-top: 35px;" width="100%" src="http://careers.ucsc.lk/wp-content/uploads/2016/10/geveo.png" alt="">
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+            <div class="column2" style="background-color:rgba(240, 233, 233, 0.548);">
+                <mat-accordion class="example-headers-align">
+                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                General
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Personal Details
+                                <mat-icon>account_circle</mat-icon>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+
+
+                        <mat-form-field class="field" appearance="outline">
+                            <mat-label>Eg: James</mat-label>
+                            <input [disabled]="applicant.firstname" matInput placeholder="First name"
+                                [(ngModel)]="applicant.firstname">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Fill first name here</mat-hint>
+                        </mat-form-field>
+
+
+                        <mat-form-field class="field" appearance="outline">
+                            <mat-label>Eg: Smith</mat-label>
+                            <input [disabled]="applicant.lastname" matInput placeholder="Last name"
+                                [(ngModel)]="applicant.lastname">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Fill last name here</mat-hint>
+                        </mat-form-field>
+
+
+                        <mat-form-field class="field" appearance="outline">
+                            <mat-label>Eg: james.smith@email.com</mat-label>
+                            <input [disabled]="applicant.email" matInput placeholder="Email"
+                                [(ngModel)]="applicant.email">
+                            <mat-icon matSuffix>mail</mat-icon>
+                            <mat-hint>Fill the email address here</mat-hint>
+                        </mat-form-field>
+
+                        <mat-form-field class="field" appearance="outline">
+                            <mat-label>Eg: (0xx)-x xxx xxx</mat-label>
+                            <input [disabled]="applicant.mobile" matInput placeholder="Placeholder"
+                                [(ngModel)]="applicant.mobile">
+                            <mat-icon matSuffix>phone</mat-icon>
+                            <mat-hint>Fill the phone number here</mat-hint>
+                        </mat-form-field>
+
+
+
+
+
+                        <mat-form-field class="field" appearance="outline">
+                            <mat-label>Eg: </mat-label>
+                            <input [disabled]="applicant.linkedin" matInput placeholder="LinkedIn Profile Url"
+                                [(ngModel)]="applicant.linkedin">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Fill the link to the linkedIn profile</mat-hint>
+                        </mat-form-field>
+                        <div class="row1">
+                            <p>Curriculam Vitae :</p>
+                            <p *ngIf="!applicant.cvDoc" style="margin-left: 10px;color: red;">This application has
+                                reviewed
+                                without the uploaded CV document</p>
+
+                        </div>
+                        <iframe style="width: 100%;height: 500px;" *ngIf="pdfDoc" [src]="pdfDoc"
+                            frameborder="0"></iframe>
+
+                        <button *ngIf="!applicant" class="button" color="primary" mat-raised-button>Save
+                            changes</button>
+                        <!-- <mat-form-field class="field" appearance="outline">
+                            <mat-label>Outline form field</mat-label>
+                            <input matInput placeholder="Placeholder">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-hint>Hint</mat-hint>
+                        </mat-form-field> -->
+                        <!-- <mat-form-field>
+                                <input matInput placeholder="First name">
+                              </mat-form-field> -->
+
+                        <!-- <mat-form-field>
+                                <input matInput type="number" min="1" placeholder="Age">
+                              </mat-form-field> -->
+
+                        <mat-action-row>
+                            <button mat-button color="primary" (click)="nextStep()">Next</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Notes
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Special Notes
+                                <mat-icon>map</mat-icon>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <button color="primary" (click)="saveNote()" mat-raised-button>Save Note</button>
+                        <div style="margin-top:12px ;">
+                            <app-ngx-editor [config]='editorConfig' style="height: 500px; "
+                                [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="note">
+                            </app-ngx-editor>
+                        </div>
+
+                        <button (click)="viewENotes()" color="accent" style="margin-top: 10px; width: 100%;"
+                            mat-raised-button>View Notes</button>
+                        <div *ngIf="view">
+                            <mat-card style="margin-top: 16px;background-color: rgb(252, 238, 255);"
+                                *ngFor="let note of applicant.notes; let i = index">
+
+                                <h6>Note #{{i+1}}</h6>
+                                <!-- <mat-card-title>Note {{i}}</mat-card-title> -->
+                                <!-- <mat-card-subtitle>Note {{i+1}}</mat-card-subtitle> -->
+
+                                <mat-card-content>
+
+                                    <div [innerHTML]="note"></div>
+                                </mat-card-content>
+
+                            </mat-card>
+                        </div>
+
+                        <mat-action-row>
+                            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                            <button mat-button color="primary" (click)="nextStep()">Next</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+
+
+                    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Evaluation
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Interview Evaluation Summary
+                                <mat-icon>map</mat-icon>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <h6>Interview Comments </h6>
+
+                        <div style="margin-top:8px ;">
+                            <app-ngx-editor [config]='editorConfig' style="height: 500px; "
+                                [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="interviewComment">
+                            </app-ngx-editor>
+                        </div>
+
+
+
+                        <button (click)="viewEComments()" color="accent" style="margin-top: 10px; width: 100%;"
+                            mat-raised-button>View Interviewer Comments</button>
+                        <div *ngIf="viewComments">
+                            <mat-card style="margin-top: 16px;background-color: rgb(253, 201, 177);"
+                                *ngFor="let comment of applicant.interviewerComments; let i = index">
+
+                                <h6>Comment #{{i+1}}</h6>
+                                <!-- <mat-card-title>Note {{i}}</mat-card-title> -->
+                                <!-- <mat-card-subtitle>Note {{i+1}}</mat-card-subtitle> -->
+
+                                <mat-card-content>
+
+                                    <div [innerHTML]="comment"></div>
+                                </mat-card-content>
+
+                            </mat-card>
+                        </div>
+
+                        <div class="points " style="margin-top: 16px;">
+                            <div class="column">
+                                <h6 style="margin-top: 6px;">Interview Points :</h6>
+                                <div class="row1">
+                                    <mat-form-field appearance="outline" class="row1">
+                                        <input matInput placeholder="Scored points " [(ngModel)]="points">
+
+                                    </mat-form-field>
+                                    <h6 style="margin-top: 20px;">/10</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <h6>Coding Excercise/Written Test results</h6>
+                        <div style="margin-top:12px ;">
+                            <app-ngx-editor [config]='editorConfig' style="height: 500px; "
+                                [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="writtenResult">
+                            </app-ngx-editor>
+                        </div>
+                        <button (click)="viewEWritten()" color="accent" style="margin-top: 10px; width: 100%;"
+                            mat-raised-button>View Written Test Results</button>
+                        <div *ngIf="viewWritten">
+                            <mat-card style="margin-top: 16px;background-color: rgb(253, 201, 177);"
+                                *ngFor="let result of applicant.writtenResults; let i = index">
+
+                                <h6>Comment #{{i+1}}</h6>
+                                <!-- <mat-card-title>Note {{i}}</mat-card-title> -->
+                                <!-- <mat-card-subtitle>Note {{i+1}}</mat-card-subtitle> -->
+
+                                <mat-card-content>
+
+                                    <div [innerHTML]="result"></div>
+                                </mat-card-content>
+
+                            </mat-card>
+                        </div>
+
+                        <div class="row1">
+
+                            <button color="primary" mat-raised-button style="margin-top: 12px; width: 50%;"
+                                (click)="saveInterviewComments()">Save Evaluation details</button>
+                        </div>
+                        <mat-action-row>
+                            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                            <button mat-button color="primary" (click)="nextStep()">Next</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Salary and Availability
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Financial Details
+                                <mat-icon>date_range</mat-icon>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+
+                        <mat-form-field class="field" appearance="outline">
+                            <mat-label>Eg: 10xxx</mat-label>
+                            <input matInput placeholder="Current Salary" [(ngModel)]="applicant.currentSalary">
+                            <mat-icon matSuffix><i class="fas fa-dollar-sign"></i></mat-icon>
+                            <mat-hint>Insert the salary in US dollars for this applicant</mat-hint>
+                        </mat-form-field> 
+
+                        <!-- <mat-form-field class="field" appearance="outline">
+                            <mat-label>Eg: 10xxx</mat-label>
+                            <input matInput placeholder="offered Salary" [(ngModel)]="applicant.offeredSalary">
+                            <mat-icon matSuffix><i class="fas fa-dollar-sign"></i></mat-icon>
+                            <mat-hint>Insert the offered salary in US dollars</mat-hint>
+                        </mat-form-field> -->
+
+                        <button style="width: 50%;" color="primary" (click)="saveFinancials()" mat-raised-button>Save
+                            financial info</button>
+                        <mat-action-row>
+                            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                            <button mat-button color="primary" (click)="nextStep()">End</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+</div>

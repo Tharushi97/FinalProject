@@ -1,0 +1,125 @@
+<app-mainview ng-model="mainview"> </app-mainview>
+<div class="wrapper">
+    <div class="main-panel">
+        <!-- <mat-toolbar class="toolbar" color="primary">
+            <span>Geveo Australasia</span>
+            <div class="toolbarButtons">
+                <button class="b1" mat-button (click)="viewApplicants()">View Applicants</button>
+                <button class="b1" mat-button (click)="viewEvaluated()">Evaluated Applicants</button>
+                
+            </div>
+        
+        </mat-toolbar> -->
+    
+    
+    <div class="jumbotron form" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+        <div class="topic">
+            Applicant Information
+        </div>
+        <mat-progress-bar mode="indeterminate" *ngIf="evaluating"></mat-progress-bar>
+    
+        <div class="content">
+    
+            <mat-form-field class="accent field" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <!-- <input matInput placeholder="First Name" [(ngModel)]="applicant.firstname"> -->
+                <input [disabled]="applicant.firstname" matInput placeholder="First Name"
+                    [(ngModel)]="applicant.firstname">
+    
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Fill the first name</mat-hint>
+            </mat-form-field>
+    
+            <mat-form-field class="accent field" appearance="outline">
+                <mat-label>Last name</mat-label>
+                <!-- <input matInput placeholder="Last Name" [(ngModel)]="applicant.lastname"> -->
+                <input [disabled]="applicant.lastname" matInput placeholder="Last Name"
+                    [(ngModel)]="applicant.lastname">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint>Fill the last name</mat-hint>
+            </mat-form-field>
+    
+            <mat-form-field class="accent field" appearance="outline">
+                <mat-label>Email</mat-label>
+                <!-- <input matInput placeholder="Email" [(ngModel)]="applicant.email"> -->
+                <input  [disabled]="applicant.email" matInput placeholder="Email"
+                    [(ngModel)]="applicant.email">
+                <mat-icon matSuffix>mail</mat-icon>
+                <mat-hint>Fill the email</mat-hint>
+            </mat-form-field>
+    
+            <mat-form-field class="accent field" appearance="outline">
+                <mat-label>Mobile number</mat-label>
+    
+                <input [disabled]="applicant.mobile" matInput placeholder="Mobile" [(ngModel)]="applicant.mobile">
+    
+    
+                <!-- <input [disabled]="applicant.mobile" matInput placeholder="Mobile" [(ngModel)]="applicant.mobile" > -->
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-hint>Fill the mobile number </mat-hint>
+            </mat-form-field>
+    
+            <mat-form-field class="accent field" appearance="outline">
+                <mat-label>National Identity Card number</mat-label>
+                <!-- <input matInput placeholder="NIC Number" [(ngModel)]="applicant.nic"> -->
+                <input  [disabled]="applicant.nic" matInput placeholder="NIC Number"
+                    [(ngModel)]="applicant.nic">
+    
+    
+                <!-- <input [disabled]="applicant.mobile" matInput placeholder="Mobile" [(ngModel)]="applicant.mobile" > -->
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-hint>Fill the NIC number </mat-hint>
+            </mat-form-field>
+    
+            <mat-form-field class="accent field" appearance="outline">
+                <mat-label>LinkedIn profile here</mat-label>
+                <input [disabled]="applicant.linkedin" matInput placeholder="LinkedIn" [(ngModel)]="applicant.linkedin">
+                <mat-icon matSuffix>language</mat-icon>
+                <mat-hint>Support the linkedIn profile link</mat-hint>
+            </mat-form-field>
+    
+            <button mat-raised-button class="cv" (click)="viewCV(applicant.cvDoc)">View the curriculam vitae</button>
+    
+    
+            <!-- <mat-form-field class="accent fieldFull" appearance="outline">
+                <mat-label>Curriculum Vitae </mat-label>
+                <input matInput placeholder="LinkedIn" [(ngModel)]="applicant.cv">
+                <mat-icon matSuffix>assignment</mat-icon>
+                <mat-hint>Support the linkedIn profile link</mat-hint>
+            </mat-form-field> -->
+    
+           
+    
+    
+            <div class="rate-widget">
+                <fieldset class="rating">
+                    <h5>Rate the applicant</h5>
+                    <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="applicant.rate"/><label for="star5" title="Rocks!">5 stars</label>
+                    <input type="radio" id="star4" name="rating" value="4"  [(ngModel)]="applicant.rate"/><label for="star4" title="Pretty good">4 stars</label>
+                    <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="applicant.rate"/><label for="star3" title="Meh">3 stars</label>
+                    <input type="radio" id="star2" name="rating" value="2"  [(ngModel)]="applicant.rate"/><label for="star2" title="Kinda bad">2 stars</label>
+                    <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="applicant.rate"/><label for="star1" title="Sucks big time">1 star</label>
+                  </fieldset>
+            </div>
+    
+    
+    
+            <mat-form-field class="accent fieldFull" appearance="outline">
+                <mat-label>Referral By :</mat-label>
+                <input matInput placeholder="Referral person" [(ngModel)]="applicant.referral" required>
+                <mat-icon matSuffix>person</mat-icon>
+                <mat-hint>Fill the referral person name here</mat-hint>
+    
+            </mat-form-field>
+            <mat-error *ngIf="!applicant.referral">**Referral person name is required</mat-error>
+            <div>
+                <button [disabled]="!applicant.referral" mat-raised-button class="submit" (click)="evaluate(applicant)">Check as
+                    evaluated</button>
+                    <mat-progress-bar mode="indeterminate" *ngIf="evaluating"></mat-progress-bar>
+            </div>
+           
+    
+        </div>
+    </div>
+    </div>
+</div>

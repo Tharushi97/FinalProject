@@ -1,0 +1,73 @@
+.box {
+    margin: 0;
+    padding: 0;
+    background: #313131;
+}
+
+.btn-primary {
+    font-family: arial;
+    
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(46, 118, 201);
+    text-decoration: none;
+    text-align: center;
+    left: 10%;
+    right: 50%;
+}
+
+.btn-get-started:hover {
+    background: #83838a;
+    border: 2px solid #807a7a;
+}
+
+.jumbotron {
+    background-image: url(" ../../assets/img/hero.jpg ");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.fakeimg {
+    
+    color:rgb(255, 253, 240);
+  
+    /* background-image: url(" ../../assets/img/hero.jpg "); */
+    background-color: rgb(24, 26, 27);
+    background-repeat:no-repeat;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    height: 700px;
+    width: 100%;
+    position:center;
+   
+    
+  }
+
+  .padding{
+    padding:50px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+  }
+  .img{
+    padding:50px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+  }

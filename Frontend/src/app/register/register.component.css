@@ -1,0 +1,188 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #c1c1fa;
+}
+
+div#first {
+    width: 400px;
+    height: auto;
+    margin: 50px auto 0;
+    padding: 50px;
+    background-color: #EEE;
+    color: #333;
+    border: 2px solid #C2D6FF;
+    border-radius: 40px 0 40px 0
+}
+
+label {
+    font-size: 15px;
+    font-weight: 700
+}
+
+input#fname {
+    background-repeat: no-repeat;
+    background-position: 6px;
+    border: 1px solid #DADADA;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    width: 310px;
+    height: 30px;
+    font-size: 14px;
+    box-shadow: 0 0 10px;
+    -webkit-box-shadow: 0 0 10px;
+    /* For I.E */
+    -moz-box-shadow: 0 0 10px;
+    /* For Mozilla Web Browser */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    /* For I.E */
+    -moz-border-radius: 5px
+    /* For Mozilla Web Browser */
+}
+
+input#lname {
+    background-repeat: no-repeat;
+    background-position: 6px;
+    border: 1px solid #DADADA;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    width: 310px;
+    height: 30px;
+    font-size: 14px;
+    box-shadow: 0 0 10px;
+    -webkit-box-shadow: 0 0 10px;
+    /* For I.E */
+    -moz-box-shadow: 0 0 10px;
+    /* For Mozilla Web Browser */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    /* For I.E */
+    -moz-border-radius: 5px
+    /* For Mozilla Web Browser */
+}
+
+input#email {
+    background-repeat: no-repeat;
+    background-position: 6px;
+    border: 1px solid #DADADA;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    width: 310px;
+    height: 30px;
+    font-size: 14px;
+    box-shadow: 0 0 10px;
+    -webkit-box-shadow: 0 0 10px;
+    /* For I.E */
+    -moz-box-shadow: 0 0 10px;
+    /* For Mozilla Web Browser */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    /* For I.E */
+    -moz-border-radius: 5px
+    /* For Mozilla Web Browser */
+}
+
+input#mobile {
+    background-repeat: no-repeat;
+    background-position: 6px;
+    border: 1px solid #DADADA;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    width: 310px;
+    height: 30px;
+    font-size: 14px;
+    box-shadow: 0 0 10px;
+    -webkit-box-shadow: 0 0 10px;
+    /* For I.E */
+    -moz-box-shadow: 0 0 10px;
+    /* For Mozilla Web Browser */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    /* For I.E */
+    -moz-border-radius: 5px
+    /* For Mozilla Web Browser */
+}
+
+input#nic {
+    background-repeat: no-repeat;
+    background-position: 6px;
+    border: 1px solid #DADADA;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    width: 310px;
+    height: 30px;
+    font-size: 14px;
+    box-shadow: 0 0 10px;
+    -webkit-box-shadow: 0 0 10px;
+    /* For I.E */
+    -moz-box-shadow: 0 0 10px;
+    /* For Mozilla Web Browser */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    /* For I.E */
+    -moz-border-radius: 5px
+    /* For Mozilla Web Browser */
+}
+
+input#linkedin {
+    background-repeat: no-repeat;
+    background-position: 6px;
+    border: 1px solid #DADADA;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    width: 310px;
+    height: 30px;
+    font-size: 14px;
+    box-shadow: 0 0 10px;
+    -webkit-box-shadow: 0 0 10px;
+    /* For I.E */
+    -moz-box-shadow: 0 0 10px;
+    /* For Mozilla Web Browser */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    /* For I.E */
+    -moz-border-radius: 5px
+    /* For Mozilla Web Browser */
+}
+
+input#address {
+    background-repeat: no-repeat;
+    background-position: 6px;
+    border: 1px solid #DADADA;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    width: 310px;
+    height: 30px;
+    font-size: 14px;
+    box-shadow: 0 0 10px;
+    -webkit-box-shadow: 0 0 10px;
+    /* For I.E */
+    -moz-box-shadow: 0 0 10px;
+    /* For Mozilla Web Browser */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    /* For I.E */
+    -moz-border-radius: 5px
+    /* For Mozilla Web Browser */
+}
+
+input#submit {
+    background-color: #df4b4b;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 25px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #949494;
+    margin-left: 120px
+}
+
+input#submit:hover {
+    background-color: #FF9980
+}

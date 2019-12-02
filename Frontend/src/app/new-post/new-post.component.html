@@ -1,0 +1,42 @@
+<div class="disp-body">
+</div>
+
+<div class="body">
+
+    <app-mainview ng-model="mainview"> </app-mainview>
+    <app-logout></app-logout>
+    <br><br><br>
+    <h2 class="top-header">Add New Post</h2>
+
+    <div class="mt-4 col-8 offset-2">
+        <div style="margin-left: 13%; margin-top: 100px; width: 100%;">
+            <div class="card-body">
+                 <form class="form-group" (ngSubmit)="onSubmit()" autocomplete="off" novalidate #newPost="ngForm"> 
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label" id="form-text">Select position</label>
+                        <div class="col-sm-9">
+                            <select id="exampleFormControlSelect1" name="position" value="" [(ngModel)]="addPosition.position"  class="form-control" required >
+                                <option value=""></option>
+                                                <option *ngFor="let jobposition of positionList" >
+                                                    {{jobposition.position}}
+                                                </option>
+                                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label" id="form-text">Openings</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" min="1" max="10" name="openings" id="exampleFormControlInput1" [(ngModel)]="addPosition.openings">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10 offset-2">
+                            <button type="submit" class="btn-submit" value="submit" >Save</button>
+                            <button type="button" class="btn-submit" value="cancel" routerLink="/Geveo/Dashboard">Cancel</button><br>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

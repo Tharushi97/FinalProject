@@ -1,0 +1,94 @@
+<div class="box">
+    <app-mainview ng-model="mainview"> </app-mainview>
+    <!-- <div class="bItem">
+    </div> -->
+    <div class="disp-body"></div>
+</div>
+
+<div class="bg">
+    <div class="container custom-container-2">
+        <h2 class="top-header">Job Applications</h2>
+        <form class="col-md-12 "><br>
+
+            <br>
+            <div style="padding: 12px;text-align: center;margin-bottom: 20px;">
+                <input type="text" name="Search_bar" placeholder="Name,Email" [(ngModel)]="search_name">
+
+                <label class="formData">Rating:</label>
+                <select name="Rating" [(ngModel)]="search_rate">
+            <option *ngFor="let ra of rate" [value]="ra">{{ra}}</option>
+          </select>
+                <!-- <label class="formData">Status:</label>
+          <select name="Statu" [(ngModel)]="search_status">
+            <option *ngFor="let ra of rate" [value]="sta">{{sta}}</option>
+          </select> -->
+            </div>
+
+
+
+
+            <button type="button" style="background-color: aqua; width: 100%;border-style: outset;border: 1px solid transparent;
+             left: 20%;" class="btn mat-elevation-z6">
+          <span class="glyphicon glyphicon-search"></span> Search
+        </button>
+            <!-- <br> -->
+
+        </form>
+
+        <div class="col-md-12 table1" style="margin-top: 20px;">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Display Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Interview Date</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">Confirmation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees">
+                        <ng-container *ngIf="(employee.firstname==search_name || employee.lastname==search_name || search_name===''|| employee.email==search_name) && (employee.rate==search_rate || search_rate=='Any') && (employee.status==search_status || search_status=='Any')">
+                            <!-- <ng-container> -->
+                            <td><a>{{employee.firstname  }} {{  employee.lastname}}</a></td>
+                            <td><a class="text-underline">{{employee.email}}</a></td>
+                            <td>{{employee.rate}}</td>
+                            <td style="width: 200px;" *ngIf="employee.shortlisted && !employee.interviewSheduled">Shorlisted</td>
+                            <td *ngIf="!employee.shortlisted && !employee.interviewSheduled">Not-Shorlisted</td>
+                            <td *ngIf="employee.interviewSheduled">Interview Scheduled</td>
+                            <td><input type="date" #date (ngModel)="employee.date" /></td>
+                            <!-- / -->
+                            <!-- <div *ngIf="employee.rate >= 3">
+                Interview Schedule
+                
+              </div>
+              <div *ngIf="employee.rate < 3">
+                Not Selected
+              </div> -->
+                            <!-- <td>{{employee.action}}</td> -->
+                            <td>
+                                <div class="flex-container">
+                                    <div>
+                                        <button style="margin: 8px;" *ngIf="!employee.interviewSheduled" [disabled]="employee.rate<3" type="button" class="btn btn-primary w-100" (click)="sendEmail(employee,date)">Email
+                        Send</button>
+                                        <button style="margin: 8px;" *ngIf="employee.interviewSheduled" disabled type="button" class="btn btn-warn w-100">Email
+                        sent</button>
+                                    </div>
+
+                                    <button style="margin: 8px;" type="button" class="btn btn-danger w-100" (click)="deleteEmployee(employee._id)">
+                      <span class="glyphicon glyphicon-trash"></span>delete </button>
+                                </div>
+                            </td>
+                            <td>{{employee.confirm}}</td>
+                        </ng-container>
+                    </tr>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

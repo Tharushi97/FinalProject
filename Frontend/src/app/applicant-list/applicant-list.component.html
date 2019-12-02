@@ -1,0 +1,96 @@
+<app-mainview ng-model="mainview"> </app-mainview>
+<div class="wrapper ">
+    <div class="main-panel">
+        <!-- <mat-toolbar class="toolbar" color="primary">
+            <button (click)="goBack()" style="border-radius: 100%;height: 50px;margin-right: 20px;" mat-raised-button color="primary" >
+                <mat-icon aria-label="back"><i class="fas fa-arrow-left"></i></mat-icon>
+            </button>
+            <span>Geveo Australasia</span>
+            <div class="toolbarButtons">
+                <button class="b1" mat-button (click)="viewApplicants()">View Applicants</button>
+                <button class="b1" mat-button (click)="viewEvaluated()">Evaluated Applicants</button>
+
+            </div>
+        
+        </mat-toolbar> -->
+        
+        <div class="jumbotron bItem">
+            <mat-toolbar style="background-color: rgba(163, 126, 197, 0.699);" class="mat-elevation-z6">
+              <span>Non Evaluated Applicants</span>
+            </mat-toolbar>
+            <table class="table table-striped" style="margin-top: 16px;max-height: 800px;overflow: scroll;">
+              <thead>
+                <tr>
+                    <th>#No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>LinkedIn Profile</th>
+                    <th>NIC Number</th>
+                    
+                </tr>
+              </thead>
+              <tbody *ngIf = "applicants">
+                  <tr  class="sel" style="cursor: pointer;"  *ngFor="let applicant of applicants; let i = index" (click)="viewDetails(applicant)">
+                    <td>{{i+1}}</td>
+                    <td>{{applicant.firstname}}   {{applicant.lastname}} </td>
+                   
+                    <td>{{applicant.email}}</td>
+                    <td>{{applicant.mobile}}</td>
+                    <td>{{applicant.linkedin}}</td>
+                    <td>{{applicant.nic}}</td>
+                  </tr>
+                
+                </tbody>
+            </table>
+          </div>
+        
+        <!-- <div class="jumbotron">
+            <div>All applicant details</div>
+        </div> -->
+        
+        <div>
+        
+        
+          
+                <!-- <section>
+                      
+                        <h1>Summary of registered applicants</h1>
+                        <div class="tbl-header">
+                          <table cellpadding="0" cellspacing="0" border="0" style="height: 800px;">
+                            <thead>
+                              <tr>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>LinkedIn Profile</th>
+                                <th>NIC Number</th>
+                                
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+                        <div class="tbl-content">
+                          <table cellpadding="0" cellspacing="0" border="0">
+                            <tbody *ngIf = "applicants">
+                              <tr style="cursor: pointer;" class="data" *ngFor="let applicant of applicants; let i = index" (click)="viewDetails(applicant)">
+                                <td>{{i+1}}</td>
+                                <td>{{applicant.firstname}}   {{applicant.lastname}} </td>
+                               
+                                <td>{{applicant.email}}</td>
+                                <td>{{applicant.mobile}}</td>
+                                <td>{{applicant.linkedin}}</td>
+                                <td>{{applicant.nic}}</td>
+                              </tr>
+                            
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                      
+                       -->
+                    
+        </div>
+    </div>
+</div>

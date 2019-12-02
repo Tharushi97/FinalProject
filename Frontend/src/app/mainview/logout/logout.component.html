@@ -1,0 +1,10 @@
+<div class="collapse navbar-collapse justify-content-end">
+    <ul class="navbar-nav">
+        <li class="nav-item ">
+            <div class="top-header">
+            <a class="nav-link" style="cursor: pointer" *ngIf="authenticationService.loggedIn()"
+                (click)="authenticationService.logout()">Logout</a>
+            </div>
+        </li>
+    </ul>
+</div>

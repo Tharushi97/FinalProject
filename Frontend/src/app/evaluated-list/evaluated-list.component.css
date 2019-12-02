@@ -1,0 +1,44 @@
+.jumbotron{
+    margin: 40px;
+    min-height: 400px;
+    /* background-color: rgb(229, 226, 229); */
+}
+
+
+.sel:hover{
+background-color: rgb(62, 4, 85);
+color: white;
+cursor: pointer;
+
+}
+
+.toolbarButtons{
+    float: right;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+
+
+.b1{
+    border: 1px rgb(65, 17, 196) solid;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.disp-body {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    background-color: rgba(82, 82, 82, 0.774);
+    background-image: url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700369880.jpg); 
+    background-size: cover;
+    background-repeat: repeat;
+    -webkit-filter: blur(10px);
+    z-index: -1;
+}
+
+

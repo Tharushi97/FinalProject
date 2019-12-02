@@ -1,0 +1,42 @@
+<div class="disp-body"></div>
+<div class="body">
+    <app-logout></app-logout>
+    <!-- <app-navbar style="position: fixed; width: 100%;"> </app-navbar> -->
+    <app-mainview> </app-mainview>
+    <br><br><br>
+    <h2 class="top-header">Job Positions</h2>
+    <br><br>
+
+    <br>
+
+    <div class="wrap-table100">
+        <div class="table100">
+            <table>
+                <thead>
+                    <tr class="table100-head">
+                        <th class="column1">Position</th>
+                        <th class="column2">Summary</th>
+                        <th class="column3">Description</th>
+                        <th class="column4">Remove</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let position of positions">
+
+                        <td class="column1">{{position.position}}</td>
+                        <td class="column2">{{position.jobSummery}}</td>
+                        <td class="column3">{{position.jobDescription}}</td>
+                        <td class="column4"><button value="{{position._id}}" (click)="delete(position._id)"
+                                class="btn-reply">Delete</button></td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>

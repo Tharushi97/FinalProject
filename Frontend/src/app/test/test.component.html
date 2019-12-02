@@ -1,0 +1,18 @@
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header" style="margin-top: -40px">
+    <div class="main">Web Based Recruitment System<span>(Pvt)Ltd</span></div><br>
+    <div class="text2">Codex Technologies (Pvt)Ltd</div>
+</div>
+<br>
+
+<div class="login">
+    <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+        <input type="email" placeholder="Email" name="username" [(ngModel)]="model.email" required email><br>
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="model.password" required><br>
+        <button type="submit" class="btn" value="Login" [disabled]="!loginForm.valid">Login</button><br>
+        <button class="btn" routerLink="/ForgotPassword">Forgot Password</button><br>
+    </form>
+    <!-- <button type="submit" value="Login" [disabled]="!loginForm.valid">Login</button><br> -->
+    <!-- <div class="forgot"> <a href="../Request-password">Forgot Password?</a></div> -->
+</div>

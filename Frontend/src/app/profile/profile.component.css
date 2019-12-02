@@ -1,0 +1,197 @@
+.disp-body {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: auto;
+  height: auto;
+  background-color: rgba(82, 82, 82, 0.774);
+  background-image: url(https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700369880.jpg); 
+  background-size: cover;
+  background-repeat: repeat;
+  -webkit-filter: blur(10px);
+  z-index: -1;
+}
+
+.row {
+    display: flex;
+    margin: 10px;
+  }
+
+.status{
+  display: flex;
+  flex-direction: row;
+  margin: 6px;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.row1{
+  display: flex;
+  flex-direction: row;
+}
+  .contact{
+    background-color: rgba(0, 0, 0, 0.404);
+    padding: 16px;
+    margin-top: 6px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+  }
+  .details{
+      background-color: rgba(29, 2, 29, 0.438);
+      color: white;
+      padding: 12px;
+  }
+
+  .subtitle{
+      color: rgb(215, 226, 226);
+  }
+  
+  .detail1{
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+  .detail2{
+      margin-top: 12px;
+      border: 1px solid white;
+      color: white;
+      padding: 12px;
+      border-radius: 2px;
+  }
+  /* Create two equal columns that sits next to each other */
+  .column1 {
+      /* background-image: url(https://media.giphy.com/media/Yt0vyaJavJoti/giphy.gif); */
+    flex: 30%;
+    padding: 10px;
+    height: 725px; /* Should be removed. Only for demonstration */
+    background-color: rgb(5, 5, 70);
+  }
+
+  .column2 {
+    flex: 70%;
+    padding: 10px;
+    height: 725px; /* Should be removed. Only for demonstration */
+    max-height: 725px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+.button{
+  float: right;
+  margin: 10px;
+}
+  .toolbarButtons{
+    float: right;
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+
+
+.b1{
+    border: 1px rgb(184, 177, 177) solid;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+
+
+
+.rating {
+    float: left;
+    margin-left: 30%;
+    margin-top: -20px;
+  }
+  
+  
+  /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+     follow these rules. Every browser that supports :checked also supports :not(), so
+     it doesn’t make the test unnecessarily selective */
+  
+  .rating:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  .rating:not(:checked) > label {
+    float: right;
+    width: 1em;
+    padding: 0 .1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    line-height: 1.2;
+    color: #ddd;
+    text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
+  }
+  
+  .rating:not(:checked) > label:before {
+    content: '★ ';
+  }
+  
+  .rating > input:checked ~ label {
+    color: #f70;
+    text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+  }
+  
+  .rating > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+  }
+
+
+  .rate-widget{
+      padding: 20px;
+  }
+
+
+
+  .example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+.field{
+  width: 100%;
+}
+.top-header {
+  width: 82%;
+  margin-top: 5px;
+  margin-left: 25%;
+  font-family: 'Exo', sans-serif;
+  font-weight: 1000;
+  color: rgb(214, 228, 23);
+  z-index: 1;
+}

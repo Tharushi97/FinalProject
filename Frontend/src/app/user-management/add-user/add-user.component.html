@@ -1,0 +1,85 @@
+<mat-toolbar>
+  <span>{{
+    service.form.get("_id").value !== null ? "Modify User" : "New User"
+  }}</span>
+  <span class="fill-remaining-space"></span>
+  <button
+    class="btn-dialog-close"
+    mat-stroked-button
+    (click)="onClose()"
+    tabIndex="-1"
+  >
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="_id" />
+        <mat-form-field>
+          <input
+            formControlName="firstname"
+            matInput
+            placeholder="First Name*"
+          />
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="lastname" matInput placeholder="Last Name*" />
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="Email*" />
+          <mat-error>Invalid email address.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            type="password"
+            formControlName="password"
+            matInput
+            placeholder="Password*"
+          />
+          <mat-error
+            >Invalid password. Should contain at least 8 characters.</mat-error
+          >
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <!--<mat-form-field>
+                        <mat-select formControlName="accessLevel" placeholder="Access Level*">
+                            <mat-option>None</mat-option>
+                            <ng-container *ngFor="let l of accessLevel">
+                                <mat-option value="{{l.id}}">{{l.value}}</mat-option>
+                            </ng-container>
+                        </mat-select>
+                    </mat-form-field>-->
+        <div class="add-bottom-padding">
+          <mat-checkbox formControlName="rateCVs">Can rate CVs</mat-checkbox
+          ><br />
+          <mat-checkbox formControlName="sendMails"
+            >Can send emails</mat-checkbox
+          ><br />
+          <mat-checkbox formControlName="interview"
+            >Can write comments in interviews</mat-checkbox
+          >
+        </div>
+        <div class="button-row">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="service.form.invalid"
+          >
+            Submit
+          </button>
+          <button mat-raised-button color="warn" (click)="onClear()">
+            Clear
+          </button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

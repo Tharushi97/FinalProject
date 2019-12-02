@@ -1,0 +1,47 @@
+/* background image */
+
+.bg {
+    background-image: url(" ../../assets/img/hero1.jpg ");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+
+/* text inside of the background image */
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #1a0000;
+}
+
+
+/* Button inside of the background image */
+
+btn-get-started {
+    font-family: arial;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(15, 97, 204);
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-get-started:hover {
+    background: #83838a;
+    border: 2px solid #807a7a;
+}
