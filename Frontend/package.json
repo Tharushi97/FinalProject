@@ -26,7 +26,7 @@
     "firebase": "^7.3.0",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ngx-bootstrap": "^5.2.0",
     "ngx-editor": "^4.1.0",
     "ngx-toaster": "^1.0.1",
